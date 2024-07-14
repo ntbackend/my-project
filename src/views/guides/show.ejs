@@ -1,0 +1,22 @@
+<div class="card mt-3" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">
+            <%= `${guide.title}` %>
+        </h5>
+    </div>
+    <ul class="list-group list-group-flush">
+        <p>
+            <%= guide.content %>
+        </p>
+    </ul>
+    <div class="card-body">
+        <% if (currentUser.role==="admin" ) { %>
+            <hr>
+            <a href="/guides/<%= guide.id %>/edit" class="btn btn-warning me-3">Tahrirlash</a>
+            <form class="d-inline" action="/guides/<%= guide.id %>/delete" method="post">
+                <button class="btn btn-danger" type="submit">O'chirish</button>
+            </form>
+            <hr>
+            <% } %>
+    </div>
+</div>

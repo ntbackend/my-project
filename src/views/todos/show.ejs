@@ -1,0 +1,22 @@
+<div class="card mt-3" style="width: 18rem;">
+    <div class="card-body">
+        <h1>
+            <%= `${todo.guide.title}` %>
+        </h1>
+    </div>
+    <ul class="list-group list-group-flush">
+        <p>
+            <%= `${todo.user.firstName} ${todo.user.lastName}` %>
+        </p>
+        <p>
+            <%= todo.guide.content %>
+        </p>
+    </ul>
+    <hr>
+    <form action="/todos/<%= todo._id %>/complate" method="post">
+        <button type="submit" <%=todo.completed ? "disabled" : "" %>>
+            <%= todo.completed ? "Tanishilgan" : "Tanishib chiqdim" %>
+        </button>
+    </form>
+    <hr>
+</div>

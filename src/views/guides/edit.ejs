@@ -1,0 +1,25 @@
+<div class="my-3 d-flex justify-content-between align-items-center">
+    <h1>Taxrirlash</h1>
+</div>
+<div class="row justify-content-start">
+    <div class="col-md-6">
+        <form action="/guides/<%= guide._id %>/edit" method="post">
+            <div class="form-group mb-3">
+                <label>Nomi</label>
+                <input type="text" class="form-control" id="lastName" name="title" value="<%= guide.title %>" required>
+            </div>
+            <div class="form-group mb-3">
+                <label>Tavsifi</label>
+                <textarea class="form-control" name="content" cols="30" rows="10"><%= guide.content %></textarea>
+            </div>
+            <div class="form-group mb-3">
+                <label>Boshqalarga Bildirish: </label>
+                <select class="form-select" name="notify">
+                    <option value="true">Ha</option>
+                    <option value="false" selected>Yo'q</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Taxrirlash</button>
+        </form>
+    </div>
+</div>
